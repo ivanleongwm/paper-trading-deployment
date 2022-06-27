@@ -70,11 +70,16 @@ app.use("/api/history", StocksHistory);
 app.use("/api/holding", StockHolding);
 app.use("/api/piechart", PieChart);
 
+app.get("/*", (req,res) => {
+  res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
+})
 
+
+/*
 app.get("/", (req, res) => {
   res.send("Hello");
 });
-
+*/
 app.listen(PORT, () => {
     console.log("I am listening");
   });
