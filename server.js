@@ -17,6 +17,7 @@ const StocksHistory = require("./controllers/historyController")
 const StockHolding = require("./controllers/holdingController")
 const PieChart = require("./controllers/pieChartController")
 const methodOverride = require("method-override");
+const path = require("path")
 
 
 
