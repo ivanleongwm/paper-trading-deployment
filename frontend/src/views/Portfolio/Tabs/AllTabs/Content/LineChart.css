@@ -1,0 +1,10 @@
+.recharts-cartesian-axis-tick {    
+    font-size: 1.4rem;
+    font-family: Roboto, sans-serif;
+}
+
+.recharts-legend-item { font-size: 1.4rem; }
+
+.recharts-wrapper {
+    margin : 0 auto;
+  }

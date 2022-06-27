@@ -1,0 +1,11 @@
+.portfolio-top-spacer {
+    background-color: #39445a;
+    top:0;
+    width:100%;
+    height:75px;
+    z-index:1;
+    font-family: Montserrat,sans-serif;
+    font-size: 5vw;
+    justify-content: center;
+    padding-bottom: 15px;
+}

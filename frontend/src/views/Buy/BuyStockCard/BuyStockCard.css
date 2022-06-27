@@ -1,0 +1,21 @@
+.text-content {
+    padding-top: 50px;
+}
+
+.card-container {
+    display:flex;
+    justify-content: space-evenly;
+    text-align:center;
+}
+
+.card-container:hover {
+    background-color:#181b20;
+    color:white;
+    display:flex;
+    justify-content: space-evenly;
+    text-align:center;
+}
+
+.mini-chart-container {
+    font-size: 15px;
+}

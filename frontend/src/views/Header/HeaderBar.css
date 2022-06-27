@@ -1,0 +1,66 @@
+.headerContainer {
+    background-color: #39445a;
+    position:fixed;
+    top:0;
+    width:100%;
+    height:75px;
+    z-index:100;
+    box-shadow: 0 1px 5px #000;
+    font-family: Montserrat,sans-serif;
+    font-size: 5vw;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.fixedElement {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+
+.loggedInUser {
+    font-size: 1.2vw;
+    width:220px;
+    padding-top:15px;
+}
+
+.title {
+    width: 600px;
+}
+
+.links {
+    padding-top: 12px;
+    color: white;
+    font-size:1.2vw;
+    width: 220px;
+    text-align: right;
+}
+a {
+    display:flex;
+    text-decoration:none;
+    color:white
+}
+
+a:hover {
+    display:flex;
+    text-decoration:none;
+    color:yellow
+}
+
+.userDetails {
+    display:flex;
+    padding: 2px;
+}
+
+.logout {
+    display:flex;
+    text-decoration:none;
+    color:white
+}
+
+.logout:hover {
+    display:flex;
+    text-decoration:none;
+    color:yellow;
+}

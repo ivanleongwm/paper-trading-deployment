@@ -1,0 +1,51 @@
+Form {
+    padding-top:25px;
+    font-size: 20px;
+}
+
+.form-container {
+    display:flex;
+}
+
+.input-quantity {
+    width: 50px;
+}
+
+.buy-button {
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 30px;
+    width: 50px;
+    font: bold15px arial,sans-serif;
+    text-shadow: none;
+}
+
+.buy-button:hover {
+    background: #6bbff0;
+    color: rgb(20, 20, 20);
+    border-style: outset;
+    border-color: #88d3ff;
+    height: 30px;
+    width: 50px;
+    font: bold15px arial,sans-serif;
+    text-shadow: none;
+}
+
+.buy-button:active {
+    background: #faed3b;
+    color: rgb(20, 20, 20);
+    border-style: outset;
+    border-color:#faed3b;
+    height: 30px;
+    width: 50px;
+    font: bold15px arial,sans-serif;
+    text-shadow: none;
+}
+
+.funds-exceeded {
+    top:50px;
+    font-size: 14px;
+    color: red;
+}
