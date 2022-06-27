@@ -1,0 +1,26 @@
+.solo-trip-container {
+    align-items: center;   
+}
+
+.trip-tabs {
+    display: flex;
+    flex-wrap:flex;
+}
+
+.trips-container {
+    overflow: hidden;
+}
+
+.trip-cards-container {
+    overflow-y: scroll;
+    width:1000px;
+    height: 690px;
+}
+
+.instagram-instagram-post-card {
+    margin: 10px;
+}
+
+.trip-card-container {
+    margin: 10px;
+}

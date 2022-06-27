@@ -1,0 +1,30 @@
+.necessity-card {
+    border:1px solid black;
+    display: inline-block;
+	vertical-align: top;
+    margin: 10px;
+    width: 450px;
+    padding: 20px;
+    height: 350px;
+}
+
+div#masonry {
+	display: -ms-flexbox;
+	-ms-flex-direction: column;
+	-ms-flex-wrap: wrap;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 100vw;
+	font-size: 0; 
+}
+div#masonry NecessityCard { 
+	width: 33.3%;
+	transition: .8s opacity;
+}
+div#masonry:hover NecessityCard {
+	opacity: 0.3;
+}
+div#masonry:hover NecessityCard:hover {
+	opacity: 1;
+}

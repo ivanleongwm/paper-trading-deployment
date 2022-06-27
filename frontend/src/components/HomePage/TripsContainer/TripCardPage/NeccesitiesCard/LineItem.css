@@ -1,0 +1,24 @@
+input {
+    width: 60px;
+    height: 20px;
+    border: none;    
+    margin-left: 10px;
+}
+
+.line-item {
+    display: flex;
+    flex-wrap: flex;
+    margin-left:30px;
+}
+
+/* Style the close button (span) */
+.close {
+    cursor: pointer;
+    height: 20px;
+    margin-left: 60px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 0px;
+  }
+  
+.close:hover {background: #bbb;}

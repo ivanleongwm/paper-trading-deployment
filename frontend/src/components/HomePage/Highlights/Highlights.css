@@ -1,0 +1,11 @@
+.carousel-container {
+    height: 400px;
+}
+
+.carousel .item {
+  height: 300px;
+}
+
+#carousel-image {
+    height: 640px;
+}

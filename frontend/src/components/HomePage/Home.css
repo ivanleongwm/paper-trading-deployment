@@ -1,0 +1,55 @@
+[class^="col"] {
+  outline: 1px solid gray;
+}
+
+.container {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.banner-image-container {
+  overflow: hidden;
+}
+
+#parallelogram {
+  width: 500px;
+  height: 700px;
+  margin: 0 0 0 -20px;
+  padding-left: 0px;
+  left: -25px;
+  -webkit-transform: skew(-4deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  background: grey;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  background: url("../../assets/images/backpacker.jpg");
+  background-size: auto 100%;
+  position: absolute;
+  top: -30px;
+  left: -80px;
+  right: -30px;
+  bottom: -30px;
+  -webkit-transform: skew(4deg);
+  -moz-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  text-align:left;
+}
+
+.black-filter {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.65));
+  padding-left:170px;
+  height: 100%;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+h2 {
+  color: white;
+}

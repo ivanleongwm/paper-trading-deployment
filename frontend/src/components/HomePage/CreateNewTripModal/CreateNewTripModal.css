@@ -1,0 +1,18 @@
+Form {
+    outline: none !important;
+    outline-offset: none !important;
+}
+
+Form.Control {
+    outline: none !important;
+    outline-offset: none !important;
+}
+
+[class^="col"] {
+    outline: 1px solid white;
+}
+
+* {
+    outline: none;
+    border-color: none;
+}
