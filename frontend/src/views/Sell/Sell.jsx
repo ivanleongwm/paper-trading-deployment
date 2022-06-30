@@ -66,7 +66,7 @@ export default function Sell({cashBalance, setCashBalance}) {
             const stockResults = []
             const cleanedStockResults = []
             
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 5; i++) {
                 stockPromises.push(
                     axios.get(`https://financialmodelingprep.com/api/v3/historical-price-full/${nasdaq.slice(1*i*5,5+i*5).join(",")}?apikey=ed422f5ab8a52bef7a04a8d39de5129d`)
                 )
