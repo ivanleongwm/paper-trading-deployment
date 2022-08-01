@@ -16,7 +16,13 @@ export default function Portfolio() {
     // Third UseEffect call
     useEffect(()=> {
       // set colors state used by pie charts
-      setColoursState([dataContext.colours.colour1,dataContext.colours.colour2,dataContext.colours.colour3,dataContext.colours.colour4,dataContext.colours.colour5,dataContext.colours.colour6])
+      try {
+        setColoursState([dataContext.colours.colour1,dataContext.colours.colour2,dataContext.colours.colour3,dataContext.colours.colour4,dataContext.colours.colour5,dataContext.colours.colour6])
+      }
+      catch(err) {
+        console.log(err)
+      }
+      
     },[dataContext.nasdaq])
 
     const retrievePieChartDetails = () => {
