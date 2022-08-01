@@ -20,7 +20,7 @@ const data02 = [
 ];
 
 export default function App({pieChartData}) {
-  console.log("Pie Chart Data",pieChartData)
+  //console.log("Pie Chart Data",pieChartData)
     return (
       <PieChart width={600} height={600}>
           <Pie

@@ -1,7 +1,10 @@
 import './HeaderBar.css'
 import {useNavigate} from 'react-router-dom'
+import {DataContext} from '../../App'
+import {useContext} from 'react'
 
-export default function HeaderBar({cashBalance,setCashBalance}) {
+export default function HeaderBar({dipatch}) {
+    const dataContext = useContext(DataContext)
 
     let navigate = useNavigate();
 
@@ -12,7 +15,7 @@ export default function HeaderBar({cashBalance,setCashBalance}) {
         setTimeout(()=> {
             navigate("/login");
            }, 1000);
-        setCashBalance(0.00);
+        dipatch({type:"UPDATE-CASHBALANCE",value:0.00});
       };
 
     return (
@@ -23,7 +26,7 @@ export default function HeaderBar({cashBalance,setCashBalance}) {
                         Logged In: {sessionStorage.getItem("username")}
                     </div>
                     <div className="userDetails">
-                        Cash Balance: {cashBalance.toFixed(2)}
+                        Cash Balance: {dataContext.cashBalance.toFixed(2)}
                     </div>
                 </div>
                 <div className="title">

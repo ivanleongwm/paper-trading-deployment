@@ -1,36 +1,20 @@
 import MiniChart from '../MiniChart/MiniChart'
 import './SellStockCard.css'
 import Form from '../Form/ControlledForm'
-import { useState , useEffect } from 'react';
-import productsArr from '../Form/products';
+import { useState , useEffect, useContext } from 'react';
+import {DataContext} from '../../../App';
 
-export default function BuyStockCard ({stockHistoricalPrices, userAccountData,  secret,  setSecret, username,stockBalanceOriginalState,setStockBalanceOriginalState, cashBalance, setCashBalance }) {
-
-    const [products, setProducts] = useState(productsArr);
+export default function BuyStockCard ({dispatch,stockHistoricalPrices}) {
+    const dataContext = useContext(DataContext)
     const [quantityHeld,setQuantityHeld] = useState(0)
-
-    const handleSubmit = (productName,productPrice,productDescription) => {
-        setProducts([
-          {
-            name: productName,
-            price: productPrice,
-            description: productDescription,
-          },
-          ...products
-        ])
-      }
       
       useEffect(()=>{
-        for (let stock of secret.stockBalance) {
-          //console.log("SELLCARDSECRET",secret.stockBalance)
+        for (let stock of dataContext.stockBalance) {
           if (stock.ticker == stockHistoricalPrices.symbol) {
             setQuantityHeld(stock.quantity)
-            //console.log("HISTORICALPRICESSYMBOL",stockHistoricalPrices.symbol)
-            console.log("ACTUALTICKERQTY",quantityHeld)
           } 
         }
-      },[secret.stockBalance])
-      
+      },[dataContext.stockBalance])
 
     return (
         <div className="card-container">
@@ -40,12 +24,9 @@ export default function BuyStockCard ({stockHistoricalPrices, userAccountData,  
             <div className="mini-chart-container">
                 <MiniChart historicalPrices={stockHistoricalPrices.historical.slice(0,20)}/>
             </div>
-            <Form handleSubmit={handleSubmit} historicalPrices={stockHistoricalPrices} username={username} userAccountData={userAccountData} secret={secret} quantityHeld={quantityHeld} setQuantityHeld={setQuantityHeld} stockBalanceOriginalState={stockBalanceOriginalState} setStockBalanceOriginalState={setStockBalanceOriginalState} cashBalance={cashBalance} setCashBalance={setCashBalance}/>
+            <Form dispatch={dispatch} historicalPrices={stockHistoricalPrices} quantityHeld={quantityHeld} setQuantityHeld={setQuantityHeld} />
         </div>
     )
 }
 
-
-//<div className="text-content">{stockHistoricalPrices.price}</div>
-//<div className="text-content">{stockHistoricalPrices.twentyFourHourChange}</div>
 

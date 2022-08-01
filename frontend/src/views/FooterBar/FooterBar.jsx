@@ -41,8 +41,8 @@ export default function FooterBar() {
             <div className="button-container">
                 {
                     buttons.map(
-                        element => {
-                            return <FooterButton buttonData={element}/>
+                        (element,i) => {
+                            return <FooterButton key={i} buttonData={element}/>
                         }
                     )
                 }
