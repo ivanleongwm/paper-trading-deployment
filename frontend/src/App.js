@@ -52,7 +52,14 @@ function App() {
   const [dataStore,dispatch] = useReducer(dataStoreReducer, {
     username: sessionStorage.getItem("username"),
     cashBalance: 0,
-    colours: ['#ADD8E6','#9cacf1','#8dd1e1','#82ca9d','#a4de6c','#d0ed57'],
+    colours: {
+      colour1: '#ADD8E6',
+      colour2: '#9cacf1',
+      colour3: '#8dd1e1',
+      colour4: '#82ca9d',
+      colour5: '#a4de6c',
+      colour6: '#d0ed57'
+    },
     purchaseLog:[],
     salesLog:[],
     stockBalance : [],
