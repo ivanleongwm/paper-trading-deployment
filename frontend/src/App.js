@@ -92,6 +92,7 @@ function App() {
 
   useEffect(()=> {
     // retrieve historical stock prices for tickers held by the user
+    console.log("HISTORICAL STOCK PRICES FOR USER TICKERS RETRIEVED")
     const stockPromises = []
     const stockResults = []
 
@@ -169,7 +170,7 @@ function App() {
 
   useEffect(()=>{
     console.log("Global Data Store",dataStore)
-  },[dataStore.stock])
+  },[dataStore.historicalStockPrices])
 
 
   return (

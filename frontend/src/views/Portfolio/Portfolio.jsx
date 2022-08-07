@@ -26,19 +26,25 @@ export default function Portfolio() {
     },[dataContext.nasdaq])
 
     const retrievePieChartDetails = () => {
+        console.log("retrieve pie chart details function called")
+        console.log("data context", dataContext)
         const stocksHeld = dataContext.tickers
         const historicalPrices = dataContext.historicalStockPrices
         const pieChartData = []
         
         for (let i = 0; i < historicalPrices.length; i++) {
+          let historicalPriceClose = historicalPrices[i].historical[0].close
           pieChartData.push({
               name: historicalPrices[i].symbol,
-              value: (Math.round(historicalPrices[i].historical[0].close * stocksHeld[historicalPrices[i].symbol])),
+              value: (Math.round(historicalPriceClose * stocksHeld[historicalPrices[i].symbol])),
               fill: coloursState[i]
           })    
+          console.log(historicalPrices[i].symbol, "Historical price close", historicalPrices[i].historical[0].close)
+          console.log(historicalPrices[i].symbol, "stocks held",stocksHeld[historicalPrices[i].symbol] )
         }
 
         setPieChartData(pieChartData)
+        console.log("PIECHARTDATA",pieChartData)
     }
      
     const retrieveMainLineChartDetails = () => {
@@ -83,7 +89,6 @@ export default function Portfolio() {
       // calculate pie chart and lineChart data
       retrievePieChartDetails()
       retrieveMainLineChartDetails()
-      //document.querySelector('.loader').classList.add('hide-loader');
     },[dataContext.historicalStockPrices,dataContext.colours])
 
 
