@@ -69,6 +69,12 @@ export default function Portfolio() {
       }
       setAggregatedByStocksPastSevenDays(pastSevenDays) //set data for individual line graphs in tabs
 
+      for (let stock of pastSevenDays) {
+        for (let dailyData of stock.historical) {
+            dailyData.close = dailyData.close / stocksHeld[stock.symbol]
+        }
+      }
+
       const aggregatedStocks = []
       if (pastSevenDays.length > 0) {
           for (let i = 0; i < pastSevenDays[0].historical.length; i++) {
@@ -89,17 +95,20 @@ export default function Portfolio() {
       // calculate pie chart and lineChart data
       retrievePieChartDetails()
       retrieveMainLineChartDetails()
-    },[dataContext.historicalStockPrices,dataContext.colours])
+    },[dataContext.historicalStockPrices,dataContext.colours,dataContext])
 
 
     return (
         <div>
             <TopSpacer/>
-            {dataContext.stock.length > 0 ? null : <div class="loader" id="loader"></div>}
-            <div className="chart-container">
-                <PieChart pieChartData={pieChartData}/>
-                <Tabs mainLineGraphData={mainLineGraphData} individualLineGraphData={aggregatedByStocksPastSevenDays}/>
-            </div>
+            {(dataContext.stock.length > 0)|(sessionStorage.getItem("username") ==null) ? null : <div class="loader" id="loader"></div>}
+            {
+                (sessionStorage.getItem("username") ==null) ? null :
+                <div className="chart-container">
+                    <PieChart pieChartData={pieChartData}/>
+                    <Tabs mainLineGraphData={mainLineGraphData} individualLineGraphData={aggregatedByStocksPastSevenDays}/>
+                </div>
+            }
         </div>
     )
 }

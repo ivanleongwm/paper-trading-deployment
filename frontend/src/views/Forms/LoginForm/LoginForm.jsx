@@ -18,7 +18,7 @@ function Login() {
   const loginIsSuccessful = (dataResponse) => {
     if (dataResponse == "Valid password") {
       setTimeout(()=> {
-        navigate("/loginsuccessful");
+        window.location.href = '/'
        }, 1000);
       setTimeout(()=> {
         navigate("/");

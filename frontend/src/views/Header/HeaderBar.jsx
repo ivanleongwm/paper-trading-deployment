@@ -3,19 +3,19 @@ import {useNavigate} from 'react-router-dom'
 import {DataContext} from '../../App'
 import {useContext} from 'react'
 
-export default function HeaderBar({dipatch}) {
+export default function HeaderBar({dispatch,originalEmptyDatastoreObject}) {
     const dataContext = useContext(DataContext)
 
     let navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("logged out of user:",sessionStorage.getItem("username"))
         sessionStorage.removeItem("username");
         setTimeout(()=> {
-            navigate("/login");
+            window.location.href = '/'
            }, 1000);
-        dipatch({type:"UPDATE-CASHBALANCE",value:0.00});
+        dispatch(originalEmptyDatastoreObject);
+        console.log("logged out of user:",sessionStorage.getItem("username"))
       };
 
     return (

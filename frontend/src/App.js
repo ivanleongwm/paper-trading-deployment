@@ -49,7 +49,7 @@ function App() {
     }
   }
 
-  const [dataStore,dispatch] = useReducer(dataStoreReducer, {
+  const originalEmptyDatastoreObject = {
     username: sessionStorage.getItem("username"),
     cashBalance: 0,
     colours: {
@@ -67,7 +67,9 @@ function App() {
     tickers:{},
     nasdaq:[],
     stock:[]
-});
+}
+
+  const [dataStore,dispatch] = useReducer(dataStoreReducer, originalEmptyDatastoreObject);
 
   useEffect(() => {
     // checks for login success and retrieves data for user
@@ -177,8 +179,8 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <DataContext.Provider value={dataStore}>
-          <header className="App-header">
-            <HeaderBar cashBalance={cashBalance} setCashBalance={setCashBalance}/>
+          <header className="App-header" >
+            <HeaderBar cashBalance={cashBalance} setCashBalance={setCashBalance} dispatch={dispatch} originalEmptyDatastoreObject={originalEmptyDatastoreObject}/>
             <Routes>
               <Route path="/" element={<Portfolio />}/>
               <Route path="/buy" element={<Buy dispatch={dispatch}/>}/>
