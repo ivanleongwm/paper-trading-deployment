@@ -25,6 +25,12 @@
     padding-top:15px;
 }
 
+.loggedInUserPlaceholder {
+    font-size: 1.2vw;
+    width:220px;
+    padding-top:15px;
+}
+
 .title {
     width: 600px;
 }

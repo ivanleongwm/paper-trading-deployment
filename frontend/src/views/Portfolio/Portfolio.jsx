@@ -5,6 +5,7 @@ import './Portfolio.css'
 import { useState, useEffect, useContext } from "react";
 import moment from 'moment'
 import { DataContext } from '../../App';
+import {useNavigate} from 'react-router-dom'
 
 export default function Portfolio() {
     const dataContext = useContext(DataContext);
@@ -13,6 +14,8 @@ export default function Portfolio() {
     const [mainLineGraphData,setMainLineGraphData] = useState([])
     const [coloursState,setColoursState] = useState(['#ADD8E6','#9cacf1','#8dd1e1','#82ca9d','#a4de6c','#d0ed57'])
     
+    let navigate = useNavigate();
+
     // Third UseEffect call
     useEffect(()=> {
       // set colors state used by pie charts
@@ -103,7 +106,38 @@ export default function Portfolio() {
             <TopSpacer/>
             {(dataContext.stock.length > 0)|(sessionStorage.getItem("username") ==null) ? null : <div class="loader" id="loader"></div>}
             {
-                (sessionStorage.getItem("username") ==null) ? null :
+                (sessionStorage.getItem("username") ==null) ? 
+                <div>
+                    <div className="first-portfolio-page">
+                        <div className="first-portfolio-page-text">
+                            <h1>A Stock Market Simulator</h1>
+                            <h2>To trade for free without risk.</h2>
+                            <div className="first-portfolio-button">    
+                                <button className="button-64" role="button" onClick={()=>{
+                                    navigate("/register", { replace: true });
+                                }}>
+                                    <span className="text">Join Now</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="second-portfolio-page">
+                        <div className="second-portfolio-page-text">
+                            <h2>Learn to Trade for Free</h2>
+                            <h3>Simulate buying and selling stocks that you've wanted to buy with in game credits, to view your performance.</h3>
+                        </div>
+                        <div className="second-portfolio-page-image"></div>
+                    </div>
+                    <div className="third-portfolio-page">
+                        <div className="third-portfolio-page-image"></div>
+                        <div className="third-portfolio-page-text">
+                            <h2>Test your trading strategies</h2>
+                            <h3>Stocks are priced with real-time stock data, so you can test your ideas as realistically as possible.</h3>
+                        </div>
+                    </div>
+                    <div className="bottom-footer-padding">
+                    </div>
+                </div>
+                :
                 <div className="chart-container">
                     <PieChart pieChartData={pieChartData}/>
                     <Tabs mainLineGraphData={mainLineGraphData} individualLineGraphData={aggregatedByStocksPastSevenDays}/>

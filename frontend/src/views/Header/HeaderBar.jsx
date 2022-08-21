@@ -21,6 +21,10 @@ export default function HeaderBar({dispatch,originalEmptyDatastoreObject}) {
     return (
         <div className="headerContainer">
             <div className="fixedElement">
+            {
+                (sessionStorage.getItem("username") == null) ? 
+                <div className="loggedInUserPlaceholder"></div>
+                :
                 <div className="loggedInUser">
                     <div className="userDetails">
                         Logged In: {sessionStorage.getItem("username")}
@@ -29,6 +33,7 @@ export default function HeaderBar({dispatch,originalEmptyDatastoreObject}) {
                         Cash Balance: {dataContext.cashBalance.toFixed(2)}
                     </div>
                 </div>
+            }
                 <div className="title">
                     PAPER TRADE
                 </div>
